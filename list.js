@@ -21,7 +21,7 @@ class List {
   constructor() {
     this._listSize = 0;
     this._pos = 0;
-    this._dataStore = [];
+    this._data = [];
   }
 
   get length() {
@@ -33,32 +33,32 @@ class List {
   }
 
   clear() {
-    this._dataStore = [];
+    this._data = [];
     this._listSize = this._pos = 0;
   }
 
   toString() {
-    return '[ ' + this._dataStore.toString() + ' ]';
+    return '[ ' + this._data.toString() + ' ]';
   }
 
   getElement() {
-    return this._dataStore[this._pos];
+    return this._data[this._pos];
   }
 
   insert(index, element) {
-    this._dataStore.splice(index, 0, element);
+    this._data.splice(index, 0, element);
     this._listSize++;
   }
 
   append(element) {
-    this._dataStore[this._listSize] = element;
+    this._data[this._listSize] = element;
     this._listSize++;
   }
 
   remove(element) {
-    let index = this._dataStore.indexOf(element);
+    let index = this._data.indexOf(element);
     if (index > -1) {
-      this._dataStore.splice(index, 1);
+      this._data.splice(index, 1);
       return true;
     } else {
       return false;

@@ -9,7 +9,7 @@ If you have `Node.js` installed, you can `cd` to the directory after cloning thi
 $ node filename.js
 ```
 
-## Reference
+## References
 
 - [Data Structures and Algorithms with JavaScript](http://shop.oreilly.com/product/0636920029557.do)
 

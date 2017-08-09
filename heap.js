@@ -15,6 +15,13 @@ class MaxHeap() {
     this._getVal = getVal;
   }
 
+  // swap child with parent
+  _swap(parent, child) {
+    let current = this._heap[parent];
+    this._heap[parent] = this._heap[child];
+    this._heap[child] = current;
+  }
+
   // Recursively swap down the element at index i to its appropriate position
   _swapDown(i) {
     // i is the current index
@@ -28,27 +35,63 @@ class MaxHeap() {
     if (i >= this._heap.length || indexOfRightChild >= this._heap.length
     || indexOfLeftChild >= this._heap.length) {
       return;
-    } else if (getVal(current) >= getVal(leftChild)
-    && getVal(current) >= getVal(rightChild)) {
+    } else if (this._getVal(current) >= this._getVal(leftChild)
+    && this._getVal(current) >= this._getVal(rightChild)) {
       // base case two: the current element is at the correct position
       return;
     }
 
     let newIndex;
-    if (getVal(leftChild) > getVal(rightChild)) {
+    if (this._getVal(leftChild) > this._getVal(rightChild)) {
       // left child is the max compared to its parent and the right child,
       // swap the left child up
-      this._heap[i] = leftChild;
-      this._heap[indexOfLeftChild] = current;
+      this._swap(i, indexOfLeftChild);
       newIndex = indexOfLeftChild;
     } else {
       // otherwise, swap the right child up
-      this._heap[i] = rightChild;
-      this._heap[indexOfRightChild] = current;
+      this._swap(i, indexOfRightChild);
       newIndex = indexOfRightChild;
     }
 
     this._swapDown(newIndex);
+  }
+
+  // Recursively swap up the element at index i to its appropriate position
+  _swapUp(i) {
+    // base case
+    if (i === 0) { return; }
+    let current = this._heap[i];
+    let indexOfParent = Math.floor((i - 1)/2);
+    let parent = this._heap[indexOfParent];
+    // base case 2
+    if (this._getVal(parent) < this._getVal(current)) {
+      this._swap(indexOfParent, i);
+      return this._swapUp(indexOfParent);
+    }
+  }
+
+  // O(n) algorithm:
+  // For each of the node in the tree, if its height is h,
+  // it takes at most h steps to swap down if the top node
+  // has height = 1 and the leaf nodes have height = H + 1,
+  // where H is Math.floor(log n).
+  // For each height, there is at maximum 2^(H-h) nodes.
+  // Therefore, total number of steps is:
+  // sum(h=1 to H)h * 2^(H-h) = O(n).
+  heapify(data) {
+    this._heap = data;
+    if (data === null || data === undefined || data.length <= 1) {
+      return data;
+    }
+
+    for (let i = Math.floor((n - 1)/2); i >=0; i--) {
+      this._swapDown(i);
+    }
+  }
+
+  insert(node) {
+    this._heap.push(node);
+    this._swapUp(this._heap.length - 1);
   }
 
   isEmpty() {

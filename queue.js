@@ -31,21 +31,20 @@ class Element() {
 }
 
 // The implementation of a priority queue uses max heap.
-
 class PriorityQueue extends MaxHeap {
-  constructor(getVal) {
-    this._data = []; // an array of Elements
+  constructor() {
+    super((element) => {element.priority});
   }
 
-  enqueue() {
-
+  enqueue(element) {
+    super.insert(element);
   }
 
   // remove the element with the highest priority
   dequeue() {
-
+    super.deleteMax();
   }
 }
 
 // Initialize a priority queue. Comparison is made based on priority.
-let priorityQueue = new priorityQueue( (element) => {element.priority} );
+let priorityQueue = new priorityQueue();

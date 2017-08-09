@@ -11,4 +11,8 @@ $ node filename.js
 
 ## Reference
 
-[Data Structures and Algorithms with JavaScript](http://shop.oreilly.com/product/0636920029557.do)
+- [Data Structures and Algorithms with JavaScript](http://shop.oreilly.com/product/0636920029557.do)
+
+- [algorithms.js](https://github.com/felipernb/algorithms.js)
+
+- [UBC CPSC 221: Basic Algorithms and Data Structures - Handouts](https://www.ugrad.cs.ubc.ca/~cs221/2015W1/handouts.shtml)

@@ -1,6 +1,6 @@
 // Queue: first in first out (FIFO)
 
-class Queue() {
+class Queue {
   constructor() {
     this._data = [];
   }
@@ -19,7 +19,7 @@ class Queue() {
 }
 
 // Element in the priority queue has a value and priority.
-class Element() {
+class Element {
   constructor(value, priority) {
     this._value = value;
     this._priority = priority;
@@ -33,7 +33,7 @@ class Element() {
 // The implementation of a priority queue uses max heap.
 class PriorityQueue extends MaxHeap {
   constructor() {
-    super((element) => {element.priority});
+    super((element) => {return element.priority});
   }
 
   enqueue(element) {

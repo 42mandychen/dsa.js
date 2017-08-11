@@ -5,7 +5,7 @@ where the index of the i-th element's left
 child is 2i + 1, the index of the right child
 is 2i + 2, the index of the parent is Math.floor((i - 1)/2),
 and the index of the node that has the maximum value is 0 (the top). */
-class MaxHeap() {
+class MaxHeap {
   // Pass in a getVal function so that this heap can be used to implementation
   // a priority queue.
   // getVal() takes in an element in the heap, and returns the value that
@@ -112,7 +112,35 @@ class MaxHeap() {
     this._swapDown(0);
     return lastElement;
   }
+
+  print() {
+    let heapDepth = Math.floor(Math.log2(this._heap.length));
+    let maxSpace = 4 * Math.pow(2, heapDepth);
+    for(let i = 0; i <= heapDepth; i++){
+      let numOfNodes = Math.pow(2, i);
+      let numOfSpaces = Math.floor(maxSpace / numOfNodes);
+      let level = "";
+      for (let j = 0; j < numOfNodes; j++) {
+        let index = numOfNodes - 1 + j;
+        if (index >= this._heap.length) {break;}
+        level += " ".repeat(numOfSpaces/2) + this._heap[numOfNodes - 1 + j] + " ".repeat(numOfSpaces/2);
+      }
+      console.log(level);
+    }
+  }
 }
 
 // Initialize a max-heap. Compare directly the elements.
-let maxHeap = new MaxHeap( (element) => {element} );
+let maxHeap = new MaxHeap( (element) => {return element} );
+maxHeap.insert(5);
+maxHeap.insert(7);
+maxHeap.insert(2);
+maxHeap.insert(10);
+maxHeap.insert(6);
+maxHeap.insert(8);
+maxHeap.insert(9);
+maxHeap.insert(12);
+maxHeap.print();
+console.log('delete max');
+maxHeap.deleteMax();
+maxHeap.print();

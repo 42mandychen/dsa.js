@@ -1,0 +1,24 @@
+{
+  "name": "dsa-js",
+  "version": "1.0.0",
+  "description": "Implementations of common data structures and algorithms in JavaScript with modern ES6 and plus syntax.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "node": "babel-node $file"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/42mandychen/dsa.js"
+  },
+  "author": "Mandy Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/42mandychen/dsa.js/issues"
+  },
+  "homepage": "https://github.com/42mandychen/dsa.js",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
+  }
+}

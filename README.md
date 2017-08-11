@@ -3,11 +3,39 @@ Implementations of common data structures and algorithms in JavaScript with mode
 
 ## Run Code
 
-If you have `Node.js` installed, you can `cd` to the directory after cloning this repo, and then Run
+This project depends on [babel](https://babeljs.io/) to compile ES6 into more compatible JavaScript.
 
+Clone this repo and run
+
+```bash
+$ npm install
 ```
-$ node filename.js
+
+to install dependencies.
+
+Then run
+
+```bash
+$ npm run node ./src/structure-test.js
 ```
+
+to execute a test file on `structure`. So for example,
+
+```bash
+$ npm run node ./src/heap-test.js
+```
+
+will execute the test files for heap.
+
+## Project Structure
+
+All files are located in [`./src`](./src). If you run
+
+```bash
+npm run build
+```
+
+locally, these files will be compiled into `./lib`.
 
 ## References
 

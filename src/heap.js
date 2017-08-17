@@ -32,12 +32,19 @@ export class MaxHeap {
     let rightChild = this._heap[indexOfRightChild];
 
     // base case one: index out of range
-    if (i >= this._heap.length || indexOfRightChild >= this._heap.length
-    || indexOfLeftChild >= this._heap.length) {
+    if (i >= this._heap.length || indexOfLeftChild >= this._heap.length) {
       return;
+    } else if (indexOfRightChild >= this._heap.length){
+      // base case two: right child doesn't exist but left child does
+      if (this._getVal(current) < this._getVal(leftChild)) {
+        this._swap(i, indexOfLeftChild);
+        return;
+      } else {
+        return;
+      }
     } else if (this._getVal(current) >= this._getVal(leftChild)
     && this._getVal(current) >= this._getVal(rightChild)) {
-      // base case two: the current element is at the correct position
+      // base case three: the current element is at the correct position
       return;
     }
 
@@ -84,7 +91,7 @@ export class MaxHeap {
       return data;
     }
 
-    for (let i = Math.floor((n - 1)/2); i >=0; i--) {
+    for (let i = Math.floor((this._heap.length - 1)/2); i >=0; i--) {
       this._swapDown(i);
     }
   }
@@ -104,13 +111,13 @@ export class MaxHeap {
     // base case: empty heap
     if (this.isEmpty()) { return; }
 
-    let lastElement = this._heap[this._heap.length - 1];
-    this._heap.pop();
+    let firstElement =this._heap[0];
+    let lastElement = this._heap.pop();
     this._heap[0] = lastElement;
 
     // Recursively swap down the new top to its position
     this._swapDown(0);
-    return lastElement;
+    return firstElement;
   }
 
   peek() {

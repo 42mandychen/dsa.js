@@ -1,14 +1,21 @@
-import {PriorityQueue, Element} from './queue';
+import {Queue} from './queue';
 
-// Initialize a priority queue. Comparison is made based on priority.
-console.log('make a priority queue and print priorities');
-let priorityQueue = new PriorityQueue();
-priorityQueue.enqueue(10, 5);
-priorityQueue.enqueue(9, 7);
-priorityQueue.enqueue(11, 2);
-priorityQueue.enqueue(3, 10);
-priorityQueue.enqueue(6, 6);
-priorityQueue.enqueue(11, 8);
-priorityQueue.enqueue(4, 9);
-priorityQueue.enqueue(5, 12);
-priorityQueue.print();
+// Initialize a new queue.
+let queue = new Queue();
+queue.enqueue(1);
+queue.enqueue(5);
+queue.enqueue(3);
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue()); // queue empty, return null
+
+// Make sure changing the object returned by peek() doesn't change the queue
+let obj = {a: 1, b: 2};
+queue.enqueue(obj);
+let copy = queue.peek();
+console.log(copy);
+console.log(obj);
+copy.a = 0;
+console.log(copy);
+console.log(obj);

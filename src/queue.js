@@ -1,8 +1,6 @@
-import {MaxHeap} from './heap';
-
 // Queue: first in first out (FIFO)
 
-class Queue {
+export class Queue {
   constructor() {
     this._data = [];
   }
@@ -12,42 +10,25 @@ class Queue {
   }
 
   dequeue() {
-    this._data.unshift();
+    if (this._data.length > 0){
+      let first = this._data[0];
+      this._data.shift();
+      return first;
+    } else {
+      return null;
+    }
   }
 
   peek() {
-    if (this._data.length > 0)
+    if (this._data.length > 0) {
+      let last = this._data[0];
+      if (typeof last === 'object') {
+        return Object.assign({}, last);
+      }
+
       return this._data[0];
-    else
+    } else {
       return null;
+    }
   }
-}
-
-// Element in the priority queue has a value and priority.
-class Element {
-  constructor(value, priority) {
-    this._value = value;
-    this._priority = priority;
-  }
-
-  get priority() {
-    return this._priority;
-  }
-}
-
-// The implementation of a priority queue uses max heap.
-export class PriorityQueue extends MaxHeap {
-  constructor() {
-    super((element) => {return element.priority});
-  }
-
-  enqueue(value, priority) {
-    super.insert(new Element(value, priority));
-  }
-
-  // remove the element with the highest priority
-  dequeue() {
-    super.deleteMax();
-  }
-
 }

@@ -20,3 +20,4 @@ console.log(maxHeap.deleteMax());
 console.log(maxHeap.deleteMax());
 console.log(maxHeap.deleteMax());
 console.log(maxHeap.deleteMax());
+console.log(maxHeap.deleteMax()); // heap empty, should return null

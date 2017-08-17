@@ -109,14 +109,17 @@ export class MaxHeap {
     // Swap the last element to the top
 
     // base case: empty heap
-    if (this.isEmpty()) { return; }
+    if (this.isEmpty()) { return null; }
 
-    let firstElement =this._heap[0];
+    let firstElement = this._heap[0];
     let lastElement = this._heap.pop();
-    this._heap[0] = lastElement;
+    if (!this.isEmpty()) {
+      this._heap[0] = lastElement;
 
-    // Recursively swap down the new top to its position
-    this._swapDown(0);
+      // Recursively swap down the new top to its position
+      this._swapDown(0);
+
+    }
     return firstElement;
   }
 

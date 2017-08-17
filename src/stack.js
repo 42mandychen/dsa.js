@@ -1,6 +1,6 @@
 // Stack: last in first out (LIFO)
 
-class Stack {
+export class Stack {
   constructor() {
     this._dataStore = [];
   }
@@ -10,10 +10,28 @@ class Stack {
   }
 
   pop() {
-    this._dataStore.pop();
+    if (this._dataStore.length > 0) {
+      let last = this._dataStore[this._dataStore.length - 1];
+      this._dataStore.pop();
+      return last;
+    } else {
+      return null;
+    }
   }
 
-  peek(){
-    return this._dataStore[this._dataStore.length - 1];
+  peek() {
+    if (this._dataStore.length > 0) {
+      let last = this._dataStore[this._dataStore.length - 1];
+
+      if (typeof last === 'object') {
+        // make a copy of the element if it's an object so that
+        // it's immutable
+        return Object.assign({}, last);
+      }
+
+      return last;
+    } else {
+      return null;
+    }
   }
 }

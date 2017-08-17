@@ -8,15 +8,18 @@ class Queue {
   }
 
   enqueue(element) {
-    super.insert(element);
+    this._data.push(element);
   }
 
   dequeue() {
-    super.deleteMax();
+    this._data.unshift();
   }
 
   peek() {
-    super.peek();
+    if (this._data.length > 0)
+      return this._data[0];
+    else
+      return null;
   }
 }
 
@@ -48,16 +51,3 @@ export class PriorityQueue extends MaxHeap {
   }
 
 }
-
-// // Initialize a priority queue. Comparison is made based on priority.
-// console.log('make a priority queue and print priorities');
-// let priorityQueue = new PriorityQueue();
-// priorityQueue.insert(new Element(10, 5));
-// priorityQueue.insert(new Element(9, 7));
-// priorityQueue.insert(new Element(11, 2));
-// priorityQueue.insert(new Element(3, 10));
-// priorityQueue.insert(new Element(6, 6));
-// priorityQueue.insert(new Element(11, 8));
-// priorityQueue.insert(new Element(4, 9));
-// priorityQueue.insert(new Element(5, 12));
-// priorityQueue.print();

@@ -27,6 +27,30 @@ $ npm run node ./src/heap-test.js
 
 will execute the test files for heap.
 
+## ESLint
+
+This project also has [ESLint](http://eslint.org/) set up. The configuration mainly uses eslint recommended rules, along with the [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) rules to better support ES6 import statements. The config file can be found under root directory: [.eslintrc](./.eslintrc).
+
+To run the linter:
+
+```bash
+$ npx eslint path/to/file
+```
+
+with the path to a file or a directory. For example,
+
+```bash
+$ npx eslint ./src
+```
+
+will lint everything in the `src` folder under root directory.
+
+```bash
+$ npx eslint .
+```
+
+will lint everything. Be careful not to lint files in `lib`.
+
 ## Project Structure
 
 All files are located in [`./src`](./src). If you run

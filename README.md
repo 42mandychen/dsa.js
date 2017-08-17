@@ -3,7 +3,7 @@ Implementations of common data structures and algorithms in JavaScript with mode
 
 ## Run Code
 
-This project depends on [babel](https://babeljs.io/) to compile ES6 into more compatible JavaScript.
+This project depends on [babel](https://babeljs.io/) to compile ES6 into more compatible JavaScript, and [jest](https://facebook.github.io/jest/) to run tests.
 
 Clone this repo and run
 
@@ -16,16 +16,24 @@ to install dependencies.
 Then run
 
 ```bash
-$ npm run node ./src/structure-test.js
+$ npm test path/to/test/file
 ```
 
-to execute a test file on `structure`. So for example,
+to execute a test file. So for example,
 
 ```bash
-$ npm run node ./src/heap-test.js
+$ npm test ./src/stack.test.js
 ```
 
-will execute the test files for heap.
+will execute the test files for stack.
+
+Tests can also be run in watch mode, type
+
+```bash
+$ npm test -- --watch
+```
+
+will watch all the tests.
 
 ## ESLint
 

@@ -9,7 +9,8 @@
     "test": "jest"
   },
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+    "collectCoverageFrom" : ["**/src/*.js"]
   },
   "repository": {
     "type": "git",

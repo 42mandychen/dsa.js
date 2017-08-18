@@ -10,6 +10,10 @@ class Element {
   get priority() {
     return this._priority;
   }
+
+  get value() {
+    return this._value;
+  }
 }
 
 // The implementation of a priority queue uses max heap.

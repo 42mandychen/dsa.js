@@ -1,4 +1,4 @@
-import {Stack} from './stack';
+import {Stack} from '../src/stack';
 
 test('push and pop numbers', () => {
   let stack = new Stack();

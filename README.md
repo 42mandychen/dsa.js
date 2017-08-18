@@ -16,7 +16,9 @@ $ npm install
 
 to install dependencies.
 
-Then run
+## Test
+
+Run
 
 ```bash
 $ npm test path/to/test/file
@@ -25,7 +27,7 @@ $ npm test path/to/test/file
 to execute a test file. So for example,
 
 ```bash
-$ npm test ./src/stack.test.js
+$ npm test ./tests/stack.test.js
 ```
 
 will execute the test files for stack.
@@ -66,13 +68,15 @@ will lint everything. Be careful not to lint files in `lib`.
 
 ## Project Structure
 
-All files are located in [`./src`](./src). If you run
+All implementation files are located in [`./src`](./src). If you run
 
 ```bash
 npm run build
 ```
 
 locally, these files will be compiled into `./lib`.
+
+All test files are in [`./tests`](./tests).
 
 ## References
 

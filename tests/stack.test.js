@@ -1,7 +1,12 @@
 import {Stack} from '../src/stack';
 
+let stack;
+
+beforeEach(() => {
+  stack = new Stack();
+});
+
 test('push and pop numbers', () => {
-  let stack = new Stack();
   stack.push(3);
   stack.push(1);
   stack.push(5);
@@ -12,7 +17,6 @@ test('push and pop numbers', () => {
 });
 
 test('peek', () => {
-  let stack = new Stack();
   stack.push(3);
   expect(stack.peek()).toBe(3);
   stack.push(1);
@@ -22,7 +26,6 @@ test('peek', () => {
 });
 
 test('push and pop objects', () => {
-  let stack = new Stack();
   let a = {a: 1, b: 0, c: 0};
   let b = {a: 0, b: 1, c: 0};
   let c = {a: 0, b: 0, c: 1};
@@ -36,7 +39,6 @@ test('push and pop objects', () => {
 });
 
 test('peek - object returned is immutable', () => {
-  let stack = new Stack();
   let a = {a: 1, b: 0, c: 0};
   stack.push(a);
   let popped = stack.peek();

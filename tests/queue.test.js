@@ -1,7 +1,12 @@
 import {Queue} from '../src/queue';
 
+let queue;
+
+beforeEach(() => {
+  queue = new Queue();
+});
+
 test('enqueue and dequeue numbers', () => {
-  let queue = new Queue();
   queue.enqueue(1);
   queue.enqueue(5);
   queue.enqueue(3);
@@ -12,7 +17,6 @@ test('enqueue and dequeue numbers', () => {
 });
 
 test('peek', () => {
-  let queue = new Queue();
   queue.enqueue(1);
   expect(queue.peek()).toBe(1);
   queue.enqueue(5);
@@ -22,7 +26,6 @@ test('peek', () => {
 });
 
 test('enqueue and dequeue objects', () => {
-  let queue = new Queue();
   let a = {a: 1, b: 0, c: 0};
   let b = {a: 0, b: 1, c: 0};
   let c = {a: 0, b: 0, c: 1};
@@ -36,7 +39,6 @@ test('enqueue and dequeue objects', () => {
 });
 
 test('peek - object returned is immutable', () => {
-  let queue = new Queue();
   let a = {a: 1, b: 0, c: 0};
   queue.enqueue(a);
   let popped = queue.peek();

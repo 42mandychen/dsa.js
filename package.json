@@ -8,6 +8,10 @@
     "node": "babel-node $file",
     "test": "jest"
   },
+  "jest": {
+    "collectCoverage": true,
+    "coverageFormats": ["html"]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/42mandychen/dsa.js"

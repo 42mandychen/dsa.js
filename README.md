@@ -35,6 +35,8 @@ $ npm test -- --watch
 
 will watch all the tests.
 
+Test coverage can be found in `./coverage/lcov-report/index.html` (not committed to version control) after running the tests.
+
 ## ESLint
 
 This project also has [ESLint](http://eslint.org/) set up. The configuration mainly uses eslint recommended rules, along with the [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) rules to better support ES6 import statements. The config file can be found under root directory: [.eslintrc](./.eslintrc).

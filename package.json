@@ -9,8 +9,7 @@
     "test": "jest"
   },
   "jest": {
-    "collectCoverage": true,
-    "coverageFormats": ["html"]
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",

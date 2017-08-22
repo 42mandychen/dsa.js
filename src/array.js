@@ -7,7 +7,8 @@ let arr2 = arr1;
 arr2[0] = 0;
 console.log(arr2[0]); //0
 console.log(arr1[0]); //0
-// To copy correctly, use the rest operator (...)
+// To copy correctly, use the spread syntax (...).
+// See docs: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator#Copy_an_array
 arr1 = [1, 2, 3, 4];
 arr2 = [...arr1];
 arr2[0] = 0;

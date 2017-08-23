@@ -129,9 +129,9 @@ export class MaxHeap {
 
   print() {
     let heapDepth = Math.floor(Math.log2(this._heap.length));
-    let maxSpace = 4 * Math.pow(2, heapDepth);
+    let maxSpace = 4 * (2 ** heapDepth);
     for(let i = 0; i <= heapDepth; i++){
-      let numOfNodes = Math.pow(2, i);
+      let numOfNodes = 2 ** i;
       let numOfSpaces = Math.floor(maxSpace / numOfNodes);
       let level = "";
       for (let j = 0; j < numOfNodes; j++) {

@@ -153,16 +153,3 @@ export class MaxHeap {
     return strHeap;
   }
 }
-
-let maxHeap = new MaxHeap( (element) => {return element} );
-maxHeap.insert(5);
-maxHeap.insert(7);
-maxHeap.insert(2);
-maxHeap.insert(10);
-maxHeap.insert(6);
-maxHeap.insert(8);
-maxHeap.insert(9);
-maxHeap.insert(12);
-maxHeap.insert(1);
-
-console.log(maxHeap.print());

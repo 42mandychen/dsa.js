@@ -86,10 +86,13 @@ export class MaxHeap {
   // Therefore, total number of steps is:
   // sum(h=1 to H)h * 2^(H-h) = O(n).
   heapify(data) {
-    this._heap = data;
-    if (data === null || data === undefined || data.length <= 1) {
-      return data;
+    if (data === null || data === undefined) {
+      throw new Error(`Input array is ${data}, please pass in a valid array.`);
     }
+
+    this._heap = [...data];
+
+    if (data.length <= 1) return;
 
     for (let i = Math.floor((this._heap.length - 1)/2); i >=0; i--) {
       this._swapDown(i);
@@ -124,22 +127,42 @@ export class MaxHeap {
   }
 
   peek() {
+    if (this._heap.length === 0) return null;
+
     return this._heap[0];
   }
 
   print() {
+    if (this._heap.length === 0) return '';
+    if (this._heap.length === 1) return this._heap[0].toString();
+
+    let strHeap = '';
     let heapDepth = Math.floor(Math.log2(this._heap.length));
     let maxSpace = 4 * (2 ** heapDepth);
     for(let i = 0; i <= heapDepth; i++){
       let numOfNodes = 2 ** i;
       let numOfSpaces = Math.floor(maxSpace / numOfNodes);
-      let level = "";
+      let level = '';
       for (let j = 0; j < numOfNodes; j++) {
         let index = numOfNodes - 1 + j;
         if (index >= this._heap.length) {break;}
-        level += " ".repeat(numOfSpaces/2) + this._getVal(this._heap[numOfNodes - 1 + j]) + " ".repeat(numOfSpaces/2);
+        level += ' '.repeat(numOfSpaces/2) + this._getVal(this._heap[numOfNodes - 1 + j]) + ' '.repeat(numOfSpaces/2);
       }
-      console.log(level);
+      strHeap += level + '\n';
     }
+    return strHeap;
   }
 }
+
+let maxHeap = new MaxHeap( (element) => {return element} );
+maxHeap.insert(5);
+maxHeap.insert(7);
+maxHeap.insert(2);
+maxHeap.insert(10);
+maxHeap.insert(6);
+maxHeap.insert(8);
+maxHeap.insert(9);
+maxHeap.insert(12);
+maxHeap.insert(1);
+
+console.log(maxHeap.print());

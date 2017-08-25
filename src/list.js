@@ -27,7 +27,8 @@ export class List {
 
   clear() {
     this._data = [];
-    this._listSize = this._pos = 0;
+    this._listSize = 0;
+    this._pos = 0;
   }
 
   find(element) {
@@ -54,8 +55,8 @@ export class List {
       this._data.splice(index, 1);
       this._listSize--;
       return true;
-    } else {
-      return false;
     }
+
+    return false;
   }
 }

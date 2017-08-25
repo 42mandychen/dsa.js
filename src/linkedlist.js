@@ -30,7 +30,7 @@ export class LList {
 
   find(data) {
     let curr = this._head;
-    while(curr !== null) {
+    while (curr !== null) {
       if (curr.data === data) return curr;
       curr = curr.next;
     }
@@ -47,7 +47,7 @@ export class LList {
   remove(data) {
     let prev = this._head;
     let curr = prev.next;
-    while(curr !== null) {
+    while (curr !== null) {
       if (curr.data === data) {
         prev.next = curr.next;
         return;
@@ -64,7 +64,7 @@ export class LList {
   print() {
     let curr = this._head;
     let llist = '';
-    while(curr !== null) {
+    while (curr !== null) {
       llist += curr.data.toString();
       llist += (curr.next === null)? '' : '->';
       curr = curr.next;

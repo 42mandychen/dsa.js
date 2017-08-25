@@ -14,9 +14,9 @@ export class Queue {
       const first = this._data[0];
       this._data.shift();
       return first;
-    } else {
-      return null;
     }
+
+    return null;
   }
 
   peek() {
@@ -27,8 +27,8 @@ export class Queue {
       }
 
       return this._data[0];
-    } else {
-      return null;
     }
+
+    return null;
   }
 }

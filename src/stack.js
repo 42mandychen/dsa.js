@@ -14,9 +14,9 @@ export class Stack {
       const last = this._dataStore[this._dataStore.length - 1];
       this._dataStore.pop();
       return last;
-    } else {
-      return null;
     }
+
+    return null;
   }
 
   peek() {
@@ -24,14 +24,14 @@ export class Stack {
       const last = this._dataStore[this._dataStore.length - 1];
 
       if (typeof last === 'object') {
-        // make a copy of the element if it's an object so that
-        // it's immutable
+        // Make a copy of the element if it's an object so that
+        // It's immutable
         return Object.assign({}, last);
       }
 
       return last;
-    } else {
-      return null;
     }
+
+    return null;
   }
 }

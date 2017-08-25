@@ -19,22 +19,22 @@ class Element {
 // The implementation of a priority queue uses max heap.
 export class PriorityQueue extends MaxHeap {
   constructor() {
-    super((element) => {return element.priority});
+    super((element) => { return element.priority; });
   }
 
   enqueue(value, priority) {
     super.insert(new Element(value, priority));
   }
 
-  // remove the element with the highest priority
+  // Remove the element with the highest priority
   dequeue() {
     const ele = super.deleteMax();
     console.log(`element to dequeue: ${JSON.stringify(ele)}`);
-    if (ele != null) {
+    if (ele !== null) {
       return ele;
-    } else {
-      return null;
     }
+
+    return null;
   }
 
 }

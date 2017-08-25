@@ -17,7 +17,7 @@ export class MaxHeap {
 
   // swap child with parent
   _swap(parent, child) {
-    let current = this._heap[parent];
+    const current = this._heap[parent];
     this._heap[parent] = this._heap[child];
     this._heap[child] = current;
   }
@@ -25,11 +25,11 @@ export class MaxHeap {
   // Recursively swap down the element at index i to its appropriate position
   _swapDown(i) {
     // i is the current index
-    let indexOfLeftChild = 2 * i + 1;
-    let indexOfRightChild = 2 * i + 2;
-    let current = this._heap[i];
-    let leftChild = this._heap[indexOfLeftChild];
-    let rightChild = this._heap[indexOfRightChild];
+    const indexOfLeftChild = 2 * i + 1;
+    const indexOfRightChild = 2 * i + 2;
+    const current = this._heap[i];
+    const leftChild = this._heap[indexOfLeftChild];
+    const rightChild = this._heap[indexOfRightChild];
 
     // base case one: index out of range
     if (i >= this._heap.length || indexOfLeftChild >= this._heap.length) {
@@ -67,9 +67,9 @@ export class MaxHeap {
   _swapUp(i) {
     // base case
     if (i === 0) { return; }
-    let current = this._heap[i];
-    let indexOfParent = Math.floor((i - 1)/2);
-    let parent = this._heap[indexOfParent];
+    const current = this._heap[i];
+    const indexOfParent = Math.floor((i - 1)/2);
+    const parent = this._heap[indexOfParent];
     // base case 2
     if (this._getVal(parent) < this._getVal(current)) {
       this._swap(indexOfParent, i);
@@ -114,8 +114,8 @@ export class MaxHeap {
     // base case: empty heap
     if (this.isEmpty()) { return null; }
 
-    let firstElement = this._heap[0];
-    let lastElement = this._heap.pop();
+    const firstElement = this._heap[0];
+    const lastElement = this._heap.pop();
     if (!this.isEmpty()) {
       this._heap[0] = lastElement;
 
@@ -137,14 +137,14 @@ export class MaxHeap {
     if (this._heap.length === 1) return this._heap[0].toString();
 
     let strHeap = '';
-    let heapDepth = Math.floor(Math.log2(this._heap.length));
-    let maxSpace = 4 * (2 ** heapDepth);
+    const heapDepth = Math.floor(Math.log2(this._heap.length));
+    const maxSpace = 4 * (2 ** heapDepth);
     for(let i = 0; i <= heapDepth; i++){
-      let numOfNodes = 2 ** i;
-      let numOfSpaces = Math.floor(maxSpace / numOfNodes);
+      const numOfNodes = 2 ** i;
+      const numOfSpaces = Math.floor(maxSpace / numOfNodes);
       let level = '';
       for (let j = 0; j < numOfNodes; j++) {
-        let index = numOfNodes - 1 + j;
+        const index = numOfNodes - 1 + j;
         if (index >= this._heap.length) {break;}
         level += ' '.repeat(numOfSpaces/2) + this._getVal(this._heap[numOfNodes - 1 + j]) + ' '.repeat(numOfSpaces/2);
       }

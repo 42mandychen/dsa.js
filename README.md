@@ -61,11 +61,11 @@ $ npx eslint ./src
 
 will lint everything in the `src` folder under root directory.
 
-```bash
-$ npx eslint .
-```
+Adding a `--fix` option will automatically fix some problems. For example, use the command below.
 
-will lint everything. Be careful not to lint files in `lib`.
+```bash
+$ npx eslint --fix ./src
+```
 
 ## Project Structure
 

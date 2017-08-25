@@ -49,7 +49,7 @@ export class List {
   }
 
   remove(element) {
-    let index = this._data.indexOf(element);
+    const index = this._data.indexOf(element);
     if (index > -1) {
       this._data.splice(index, 1);
       this._listSize--;

@@ -28,7 +28,7 @@ export class PriorityQueue extends MaxHeap {
 
   // remove the element with the highest priority
   dequeue() {
-    let ele = super.deleteMax();
+    const ele = super.deleteMax();
     console.log(`element to dequeue: ${JSON.stringify(ele)}`);
     if (ele != null) {
       return ele;

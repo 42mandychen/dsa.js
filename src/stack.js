@@ -11,7 +11,7 @@ export class Stack {
 
   pop() {
     if (this._dataStore.length > 0) {
-      let last = this._dataStore[this._dataStore.length - 1];
+      const last = this._dataStore[this._dataStore.length - 1];
       this._dataStore.pop();
       return last;
     } else {
@@ -21,7 +21,7 @@ export class Stack {
 
   peek() {
     if (this._dataStore.length > 0) {
-      let last = this._dataStore[this._dataStore.length - 1];
+      const last = this._dataStore[this._dataStore.length - 1];
 
       if (typeof last === 'object') {
         // make a copy of the element if it's an object so that

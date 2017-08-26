@@ -58,7 +58,25 @@ export class LList {
   }
 
   reverse() {
+    let prev = this._head.next;
+    if (prev === null) {
+      return this._head;
+    }
+    let curr = prev.next;
+    if (curr === null) {
+      return this._head;
+    }
+    prev.next = null;
+    while (curr !== null) {
+      const next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
 
+    // Out of the loop, prev is the last one
+    this._head.next = prev;
+    return this._head;
   }
 
   print() {

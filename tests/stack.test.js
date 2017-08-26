@@ -26,9 +26,9 @@ test('peek', () => {
 });
 
 test('push and pop objects', () => {
-  let a = {a: 1, b: 0, c: 0};
-  let b = {a: 0, b: 1, c: 0};
-  let c = {a: 0, b: 0, c: 1};
+  const a = {a: 1, b: 0, c: 0};
+  const b = {a: 0, b: 1, c: 0};
+  const c = {a: 0, b: 0, c: 1};
   stack.push(a);
   stack.push(b);
   stack.push(c);
@@ -39,7 +39,7 @@ test('push and pop objects', () => {
 });
 
 test('peek - object returned is immutable', () => {
-  let a = {a: 1, b: 0, c: 0};
+  const a = {a: 1, b: 0, c: 0};
   stack.push(a);
   let popped = stack.peek();
   expect(popped).toEqual(a);

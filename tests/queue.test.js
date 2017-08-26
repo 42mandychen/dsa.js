@@ -26,9 +26,9 @@ test('peek', () => {
 });
 
 test('enqueue and dequeue objects', () => {
-  let a = {a: 1, b: 0, c: 0};
-  let b = {a: 0, b: 1, c: 0};
-  let c = {a: 0, b: 0, c: 1};
+  const a = {a: 1, b: 0, c: 0};
+  const b = {a: 0, b: 1, c: 0};
+  const c = {a: 0, b: 0, c: 1};
   queue.enqueue(a);
   queue.enqueue(b);
   queue.enqueue(c);
@@ -39,9 +39,9 @@ test('enqueue and dequeue objects', () => {
 });
 
 test('peek - object returned is immutable', () => {
-  let a = {a: 1, b: 0, c: 0};
+  const a = {a: 1, b: 0, c: 0};
   queue.enqueue(a);
-  let popped = queue.peek();
+  const popped = queue.peek();
   expect(popped).toEqual(a);
   popped.a = 0;
   expect(popped).not.toEqual(a);

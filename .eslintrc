@@ -22,13 +22,11 @@
     "no-self-compare": 1,
     "no-unmodified-loop-condition": 1,
     "no-unused-expressions": 1,
-    "no-useless-concat": 1,
     "no-useless-return": 1,
     "radix": 1,
     "no-undef-init": 1,
     "no-use-before-define": 2,
     "array-bracket-spacing": 1,
-    "block-spacing": 1,
     "keyword-spacing": [1,
       {
         "before": true,

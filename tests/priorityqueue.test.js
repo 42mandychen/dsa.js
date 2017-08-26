@@ -1,7 +1,7 @@
 import {PriorityQueue} from '../src/priorityqueue';
 
 test('enqueue and dequeue - max priority element should be returned', () => {
-  let priorityQueue = new PriorityQueue();
+  const priorityQueue = new PriorityQueue();
   priorityQueue.enqueue(10, 5);
   priorityQueue.enqueue(9, 7);
   priorityQueue.enqueue(11, 2);

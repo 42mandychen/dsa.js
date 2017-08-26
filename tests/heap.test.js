@@ -7,7 +7,7 @@ const sortedNums = [...nums].sort((a, b) => {
 });
 
 beforeEach(() => {
-  maxHeap = new MaxHeap( (element) => {return element} );
+  maxHeap = new MaxHeap((element) => { return element; });
 });
 
 test('delete max with empty heap', () => {
@@ -15,7 +15,7 @@ test('delete max with empty heap', () => {
 });
 
 test('delete max with non-empty heap', () => {
-  for (let num of nums) {
+  for (const num of nums) {
     maxHeap.insert(num);
   }
 
@@ -48,8 +48,8 @@ test('peek', () => {
   expect(maxHeap.peek()).toBeNull();
   for (let i = 0; i < nums.length; i++) {
     maxHeap.insert(nums[i]);
-    let subArr = nums.slice(0, i + 1);
-    let currMax = Math.max(...subArr);
+    const subArr = nums.slice(0, i + 1);
+    const currMax = Math.max(...subArr);
     expect(maxHeap.peek()).toBe(currMax);
   }
 });
@@ -60,7 +60,7 @@ test('print array with one element', () => {
 });
 
 test('print long array', () => {
-  for (let num of nums) {
+  for (const num of nums) {
     maxHeap.insert(num);
   }
 

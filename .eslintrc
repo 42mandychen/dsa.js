@@ -20,7 +20,6 @@
     "no-param-reassign": 1,
     "no-return-assign": 1,
     "no-self-compare": 1,
-    "no-unmodified-loop-condition": 1,
     "no-unused-expressions": 1,
     "no-useless-return": 1,
     "radix": 1,
